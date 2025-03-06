@@ -51,11 +51,11 @@ def check_for_nyc():
                 return  # Stop checking after the first match
 
             # Test for Nashville (for debugging)
-            if "nashville" in city.lower():
-                message = f"🛠️ [TEST] Brand New is coming to {city}, {state} at {venue}! 🎟️ {ticket_link}"
-                send_push_notification(message)
-                print("🛠️ Test Passed: Nashville concert found & Push Notification sent!")
-                return  # Stop checking after the first match
+            # if "nashville" in city.lower():
+            #     message = f"🛠️ [TEST] Brand New is coming to {city}, {state} at {venue}! 🎟️ {ticket_link}"
+            #     send_push_notification(message)
+            #     print("🛠️ Test Passed: Nashville concert found & Push Notification sent!")
+            #     return  # Stop checking after the first match
 
         print("❌ No NYC/Brooklyn/Nashville concert found.")
     else:
