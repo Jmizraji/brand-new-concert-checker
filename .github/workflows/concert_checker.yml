@@ -1,29 +1,29 @@
-name: Concert Checker
+# name: Concert Checker
 
-on:
-  schedule:
-    - cron: "*/30 * * * *"  # Runs every 30 minutes
-  workflow_dispatch:  # Allows manual trigger
+# on:
+#   schedule:
+#     - cron: "*/30 * * * *"  # Runs every 30 minutes
+#   workflow_dispatch:  # Allows manual trigger
 
-jobs:
-  check-concerts:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+# jobs:
+#   check-concerts:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v3
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: "3.x"
+#       - name: Set up Python
+#         uses: actions/setup-python@v4
+#         with:
+#           python-version: "3.x"
 
-      - name: Install dependencies
-        run: pip install requests
+#       - name: Install dependencies
+#         run: pip install requests
 
-      - name: Run concert checker
-        env:
-          PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
-          PUSHOVER_API_TOKEN: ${{ secrets.PUSHOVER_API_TOKEN }}
-          API_KEY: ${{ secrets.API_KEY }}  # Only if required
-        run: python check_nyc.py
+#       - name: Run concert checker
+#         env:
+#           PUSHOVER_USER_KEY: ${{ secrets.PUSHOVER_USER_KEY }}
+#           PUSHOVER_API_TOKEN: ${{ secrets.PUSHOVER_API_TOKEN }}
+#           API_KEY: ${{ secrets.API_KEY }}  # Only if required
+#         run: python check_nyc.py
 
